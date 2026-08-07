@@ -1,5 +1,6 @@
-# Build output (obfuscated zips are attached to Releases, not committed)
+# Build output + the cached dist-repo clone used by release.sh
 build/dist/
+build/.dist-repo/
 
 # OS / editor cruft
 .DS_Store
