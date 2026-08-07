@@ -1,0 +1,14 @@
+/* Hivemind Mixer admin fields */
+.hvm-fields .hvm-field { display:block; margin:0 0 14px; }
+.hvm-fields .hvm-label { display:block; font-weight:600; margin-bottom:4px; }
+.hvm-image-preview { display:block; max-width:120px; height:auto; margin:6px 0; border:1px solid #ddd; }
+.hvm-gallery-preview { display:flex; flex-wrap:wrap; gap:6px; margin:6px 0; }
+.hvm-gallery-preview img { width:64px; height:64px; object-fit:cover; border:1px solid #ddd; }
+.hvm-repeater { border:1px solid #dcdcde; border-radius:6px; padding:12px; margin:0 0 16px; background:#fff; }
+.hvm-repeater-label { display:block; margin-bottom:8px; font-size:13px; }
+.hvm-row { position:relative; border:1px solid #e5e7eb; border-radius:6px; padding:10px 34px 10px 30px; margin-bottom:8px; background:#f6f7f7; }
+.hvm-row-handle { position:absolute; left:6px; top:12px; color:#a7aaad; cursor:move; }
+.hvm-row-remove { position:absolute; right:8px; top:6px; font-size:20px; line-height:1; color:#b32d2e; text-decoration:none; cursor:pointer; }
+.hvm-row-fields { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+.hvm-sub { display:block; }
+.hvm-sub > span { display:block; font-size:12px; color:#50575e; margin-bottom:2px; }

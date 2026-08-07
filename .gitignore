@@ -1,0 +1,10 @@
+# Build output (obfuscated zips are attached to Releases, not committed)
+build/dist/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.map
+
+# Composer: keep vendor/ (the update-checker library must ship with the theme)
+# so it is intentionally NOT ignored.

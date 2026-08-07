@@ -1,0 +1,2514 @@
+/* Hivemind Mixer — single-event section styles (Figma tokens). */
+/* Mixer navbar (white) — darken the white wordmark so it reads on white. */
+#hvm-mixer-nav .hvm-nav-logo img {
+    filter: brightness(0);
+}
+
+/* smooth anchor scrolling + offset for the fixed-height navbar */
+html {
+    scroll-behavior: smooth;
+}
+
+.hvm-section, .hvm-hero {
+    scroll-margin-top: 96px;
+}
+
+.hvm-section {
+    padding: clamp(50px, 6.5vw, 120px) 20px;
+}
+
+.hvm-boxed {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hvm-head {
+    max-width: 760px;
+    margin: 0 auto clamp(40px, 4vw, 72px);
+    text-align: center;
+}
+
+.hvm-align-left {
+    text-align: left;
+    margin-left: 0;
+}
+
+.hvm-eyebrow {
+    display: block;
+    color: #010070;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    font-size: 15px;
+    margin: 0 0 16px;
+}
+
+.hvm-h2 {
+    color: #080A12;
+    font-size: clamp(28px, 4vw, 50px);
+    line-height: 1.05;
+    font-weight: 700;
+    margin: 0 0 16px;
+    font-family: var(--e-global-typography-secondary-font-family, inherit);
+}
+
+.hvm-sub {
+    color: #2B2F3A;
+    font-size: clamp(17px, 1.6vw, 20px);
+    line-height: 1.5;
+    margin: 0 auto;
+}
+
+.hvm-empty {
+    border: 1px dashed #b3b3b3;
+    color: #888;
+    padding: 24px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+/* buttons — font-family + colours from kit globals; fluid is inherent (fixed pad is fine, small) */
+.hvm-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+.hvm-btn-dark {
+    background: var(--e-global-color-hmbtnnavy, #010051);
+    color: var(--e-global-color-hmwhite, #fff);
+}
+
+.hvm-btn-light {
+    background: #F9FAFF;
+    color: var(--e-global-color-hmbtnnavy, #010051);
+    border: 1px solid var(--e-global-color-hmbtnnavy, #010051);
+}
+
+/* hero — Figma "HIVEMIND New Mixer page -template" (1440x880). All colours + font-family
+   come from the Elementor kit globals; every size is fluid via clamp() (375 -> 1440). */
+.hvm-hero {
+    position: relative;
+    min-height: clamp(600px, 61vw, 880px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 113px;
+    color: var(--e-global-color-hmwhite, #fff);
+    overflow: hidden;
+}
+
+.hvm-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hvm-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(10, 12, 25, .30) 0%, rgba(10, 12, 25, .50) 100%);
+}
+
+.hvm-hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    width: 100%;
+
+}
+
+.hvm-hero-logo {
+    width: clamp(200px, 23.9vw, 344px);
+    height: auto;
+    margin: 0 auto clamp(22px, 2.8vw, 40px);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.hvm-hero-sponsor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 0 clamp(15px, 2.8vw, 20px);
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-size: clamp(15px, 1.4vw, 20px);
+    font-weight: 700;
+    color: var(--e-global-color-hmwhite, #fff);
+}
+
+.hvm-hero-sponsor img {
+    height: clamp(26px, 2.7vw, 39px);
+    width: auto;
+}
+
+.hvm-hero-title {
+    font-family: var(--e-global-typography-primary-font-family), "Roboto", sans-serif;
+    font-size: clamp(34px, 4.6vw, 66px);
+    line-height: 1.17;
+    font-weight: 500;
+    margin: 0 auto clamp(14px, 1.4vw, 30px);
+    max-width: 960px;
+    color: var(--e-global-color-hmwhite, #fff);
+}
+
+.hvm-hero-sub {
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-size: clamp(17px, 1.8vw, 26px);
+    line-height: 1.15;
+    font-weight: 400;
+    max-width: 720px;
+    margin: 0 auto clamp(22px, 2.8vw, 20px);
+    color: var(--e-global-color-hmwhite, #fff);
+}
+
+.hvm-hero-eyebrow {
+    font-family: var(--e-global-typography-primary-font-family), "Roboto", sans-serif;
+    font-size: clamp(20px, 1.95vw, 28px);
+    line-height: 1.18;
+    font-weight: 500;
+    margin: 0 0 clamp(14px, 1.4vw, 20px);
+    color: var(--e-global-color-hmwhite, #fff);
+}
+
+.hvm-countdown-inline {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: clamp(6px, 1vw, 14px);
+    justify-content: center;
+    align-items: baseline;
+    margin: 0 0 clamp(22px, 2.8vw, 40px);
+    color: var(--e-global-color-hmwhite, #fff);
+}
+
+.hvm-countdown-inline .hvm-cd {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.hvm-countdown-inline .hvm-cd b {
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-size: clamp(20px, 2.2vw, 32px);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.hvm-countdown-inline .hvm-cd i {
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-size: clamp(10px, .85vw, 12px);
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+}
+
+.hvm-countdown-inline .hvm-cd-sep {
+    opacity: .5;
+    font-size: clamp(16px, 1.4vw, 20px);
+}
+
+.hvm-hero-btns {
+    display: flex;
+    gap: clamp(10px, 1vw, 24px);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* stats */
+.hvm-stats {
+    background: #F6F4F2;
+}
+
+.hvm-stat-grid {
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap: 40px;
+    text-align: center;
+}
+
+.hvm-stat b {
+    display: block;
+    font-size: clamp(40px, 5vw, 65px);
+    font-weight: 700;
+    color: #1A181D;
+    line-height: 1;
+}
+
+.hvm-stat span {
+    color: #475569;
+    font-size: 15px;
+}
+
+.hvm-breakdown {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+    justify-content: center;
+    padding: 32px 0 0;
+    margin: 0;
+}
+
+.hvm-breakdown li {
+    font-size: 15px;
+}
+
+.hvm-breakdown b {
+    color: #1A181D;
+}
+
+.hvm-breakdown span {
+    color: #475569;
+}
+
+/* previous edition — Figma "Frame 2147228479". Fonts from kit globals
+   (Scandia=secondary for title/values, Helvetica=text for eyebrow/desc/labels),
+   every size fluid via clamp(); colours default to Figma, overridable by controls. */
+.hvm-prev {
+    background: var(--e-global-color-hmpanel, #F6F4F2);
+    /* drop the section's side padding so the 1200 inner matches Figma exactly;
+       re-added on the inner below 1200 so content never touches the edge. */
+    padding-left: 0;
+    padding-right: 0;
+}
+.hvm-prev-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: clamp(24px, 2.9vw, 35px);
+}
+.hvm-prev-left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 513px;
+    flex: 1 1 0;
+}
+.hvm-prev-eyebrow {
+    --hvm-prev-line: #0010A0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #0010A0;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 700;
+    font-size: var(--e-global-typography-hmlabel-font-size);
+    line-height: 20px;
+}
+.hvm-prev-line {
+    width: 23px;
+    height: 1px;
+    background: var(--hvm-prev-line, #0010A0);
+    display: inline-block;
+    flex: 0 0 auto;
+}
+.hvm-prev-head {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.hvm-prev-title {
+    margin: 0;
+    font-family: var(--e-global-typography-secondary-font-family), "Scandia", Arial, sans-serif;
+    font-weight: 500;
+    font-size: clamp(28px, 3.6vw, 50px); /* Figma: 28px mobile → 50px desktop */
+    line-height: 1.08;
+    color: var(--e-global-color-hmink, #080A12);
+}
+.hvm-prev-desc {
+    margin: 0;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 400;
+    font-size: clamp(16px, 1.4vw, 20px);
+    line-height: 1.4;
+    color: #1A181D;
+}
+.hvm-prev-right {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 652px;
+    flex: 0 0 auto;
+}
+.hvm-prev-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+.hvm-prev-card {
+    border: 1px solid #CFCFCF;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.hvm-prev-card-stat {
+    padding: clamp(18px, 1.9vw, 23px);
+    gap: 8px;
+}
+.hvm-prev-card-aud {
+    padding: 17px;
+    gap: 12px;
+}
+.hvm-prev-val {
+    font-family: var(--e-global-typography-secondary-font-family), "Scandia", Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(20px, 2.4vw, 32px); /* Figma: 20px mobile → 32px desktop */
+    line-height: 1.1;
+    color: var(--e-global-color-hmink, #080A12);
+}
+.hvm-prev-cap {
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 400;
+    font-size: clamp(12px, 1.4vw, 20px); /* Figma: 12px mobile → 20px desktop */
+    line-height: 1.2;
+    color: #1A181D;
+}
+.hvm-prev-pct {
+    display: flex;
+    align-items: baseline;
+    color: var(--e-global-color-hmink, #080A12);
+    font-family: var(--e-global-typography-secondary-font-family), "Scandia", Arial, sans-serif;
+}
+.hvm-prev-pct b {
+    font-weight: 700;
+    font-size: clamp(24px, 2.4vw, 32px);
+    line-height: 1;
+}
+.hvm-prev-pct i {
+    font-weight: 500;
+    font-style: normal;
+    font-size: clamp(24px, 1.8vw, 24px); /* Figma: % stays 24px on mobile and desktop */
+    line-height: 1;
+}
+.hvm-prev-aud {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+.hvm-prev-aud-label {
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(14px, 1.15vw, 16px);
+    line-height: 20px;
+    text-align: center;
+    color: var(--e-global-color-hmink, #080A12);
+}
+.hvm-prev-aud-desc {
+    margin: 0;
+    max-width: 162px;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 400;
+    font-size: clamp(12px, 1.1vw, 14px); /* Figma: 12px mobile → 14px desktop */
+    line-height: 1.5;
+    text-align: center;
+    color: var(--e-global-color-hmink, #080A12);
+}
+
+/* desktop cards are the full 208px (inner 174) — keep the bold label on one
+   line like Figma; below this the cards shrink, so the label may wrap. */
+@media (min-width: 992px) {
+    .hvm-prev-aud-label {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 1240px) {
+    .hvm-prev-inner {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 991px) {
+    .hvm-prev-inner {
+        flex-direction: column;
+        gap: clamp(28px, 4vw, 40px);
+    }
+    /* Figma mobile centres the header (eyebrow with a line either side). */
+    .hvm-prev-left {
+        max-width: none;
+        align-items: center;
+        text-align: center;
+    }
+    .hvm-prev-head {
+        align-items: center;
+    }
+    .hvm-prev-eyebrow {
+        justify-content: center;
+    }
+    .hvm-prev-eyebrow::after {
+        content: "";
+        width: 23px;
+        height: 1px;
+        background: var(--hvm-prev-line, #0010A0);
+        display: inline-block;
+        flex: 0 0 auto;
+    }
+    .hvm-prev-right {
+        width: 100%;
+    }
+}
+
+/* Figma mobile: top stats stay 3-up; audience cards go 2-up with the 3rd full-width. */
+@media (max-width: 560px) {
+    .hvm-prev-row-bottom {
+        grid-template-columns: 1fr 1fr;
+    }
+    .hvm-prev-row-bottom .hvm-prev-card:nth-child(3) {
+        grid-column: 1 / -1;
+    }
+    .hvm-prev-aud {
+        max-width: none;
+    }
+}
+
+/* recap */
+.hvm-recap-grid {
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.hvm-recap-text .hvm-h2 {
+    margin-bottom: 12px;
+}
+
+.hvm-video {
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0B0D17;
+}
+
+.hvm-video iframe, .hvm-video video {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* schedule — interactive tabs (desktop) / accordion (mobile). Figma "How the night runs".
+   Fonts pulled from kit globals (Scandia=secondary, Helvetica=text); accent colours are
+   Figma-exact for this component. Sizes fluid via clamp(). */
+.hvm-schedule .hvm-sched {
+    display: grid;
+    grid-template-columns: minmax(280px, 344px) 1fr;
+    column-gap: clamp(24px, 3.3vw, 48px);
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* left: tab list + timeline */
+.hvm-sched-tabs {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(6px, 0.8vw, 10px);
+    padding-left: 44px;
+}
+
+.hvm-sched-tabs::before {
+    content: "";
+    position: absolute;
+    left: 24px;
+    top: 22px;
+    bottom: 22px;
+    width: 2px;
+    background: #E6E7F2;
+}
+
+.hvm-sched-tab {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2px !important;
+    text-align: left !important;
+    width: 100% !important;
+    padding: 16px 20px !important;
+    border: 1px solid transparent !important;
+    border-radius: 12px !important;
+    background: transparent !important;
+    cursor: pointer !important;
+    font: inherit !important;
+    transition: all .25s ease!important;
+}
+
+.hvm-sched-tab::before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: 21px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1.5px solid #C7D7FD;
+}
+
+.hvm-sched-tab[aria-selected="true"] {
+    background: rgba(2, 0, 176, .08) !important;
+    border-color: #C7D7FD !important;
+}
+
+.hvm-sched-tab[aria-selected="true"]::before {
+    background: #0010A0 !important;
+    border-color: #0010A0 !important;
+}
+
+.hvm-sched-time {
+    font-family: var(--e-global-typography-secondary-font-family), "Scandia", sans-serif;
+    font-weight: 700;
+    font-size: clamp(18px, 1.5vw, 22px);
+    line-height: 1.36;
+    color: #1A202C;
+}
+
+.hvm-sched-tab[aria-selected="true"] .hvm-sched-time {
+    color: #0010A0;
+}
+
+.hvm-sched-tt {
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #64748B;
+}
+
+.hvm-sched-tab[aria-selected="true"] .hvm-sched-tt {
+    font-weight: 700;
+}
+
+/* reset: <button> inherits the Elementor kit button styling (navy bg) which is more
+   specific than .hvm-sched-tab; scope-prefix + reset so inactive tabs stay transparent. */
+.hvm-schedule .hvm-sched-tab {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    box-shadow: none;
+    color: inherit;
+    min-height: 0;
+}
+
+.hvm-schedule .hvm-sched-tab[aria-selected="true"] {
+    background: rgba(2, 0, 176, .08);
+    border-color: #C7D7FD;
+}
+
+/* hover mirrors the active-tab design (box + border + indigo time + filled dot) */
+@media (hover: hover) {
+    .hvm-schedule .hvm-sched-tab:hover {
+        background: rgba(2, 0, 176, .08);
+        border-color: #C7D7FD;
+    }
+
+    .hvm-sched-tab:hover::before {
+        background: #0010A0;
+        border-color: #0010A0;
+    }
+
+    .hvm-sched-tab:hover .hvm-sched-time {
+        color: #0010A0;
+    }
+
+    .hvm-sched-tab:hover .hvm-sched-tt {
+        font-weight: 700;
+    }
+}
+
+/* right: content panels (one active, fade-in) */
+.hvm-sched-stage {
+    position: relative;
+    aspect-ratio: 856 / 529;
+}
+
+.hvm-sched-panel {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    border-radius: 14px;
+    border: 1px solid #D4D4D4;
+    overflow: hidden;
+    background-color: #0B0D17;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity .45s ease;
+}
+
+.hvm-sched-panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(8, 10, 20, 0) 35%, rgba(8, 10, 20, .85) 100%);
+    pointer-events: none; /* decorative only — never intercept clicks */
+}
+
+.hvm-month {
+    background: #277EFF;
+}
+
+.hvm-sched-panel.is-active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2; /* incoming reveals on top during the crossfade */
+}
+
+.hvm-sched-panel-body {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: clamp(20px, 2.2vw, 32px);
+    transform: translateY(12px);
+    transition: transform .55s cubic-bezier(.22, .61, .36, 1);
+}
+
+.hvm-sched-panel.is-active .hvm-sched-panel-body {
+    transform: none; /* content gently rises as the card fades in */
+}
+
+.hvm-sched-badge {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #fff;
+    color: #0010A0;
+    border-radius: 999px;
+    padding: 7px 14px;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.hvm-sched-ptitle {
+    margin: 0;
+    color: var(--e-global-color-hmwhite, #fff);
+    font-family: var(--e-global-typography-secondary-font-family), "Scandia", sans-serif;
+    font-weight: 700;
+    font-size: clamp(24px, 2.6vw, 32px);
+    line-height: 1.15;
+}
+
+.hvm-sched-pdesc {
+    margin: 0;
+    max-width: 640px;
+    color: var(--e-global-color-hmwhite, #fff);
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 400;
+    font-size: clamp(14px, 1.1vw, 15px);
+    line-height: 1.6;
+}
+
+/* mobile: accordion — tab, its content, next tab, its content … (JS moves panels) */
+@media (max-width: 900px) {
+    .hvm-schedule .hvm-sched {
+        display: block;
+        max-width: 560px;
+    }
+
+    .hvm-sched-tabs {
+        gap: 0;
+    }
+
+    .hvm-sched-tabs::before {
+        display: none;
+    }
+
+    .hvm-sched-stage {
+        display: none;
+    }
+
+    /* mobile only: slide the card open/closed (max-height animates; desktop is untouched).
+       display stays flex + relative so the ::after overlay is contained and clicks pass. */
+    .hvm-sched-panel {
+        position: relative;
+        display: flex;
+        aspect-ratio: auto;
+        height: clamp(200px, 58vw, 280px);
+        opacity: 0;
+        max-height: 0;
+        margin: 0;
+        overflow: hidden;
+        transition: max-height .5s cubic-bezier(.4, 0, .2, 1),
+        opacity .38s ease,
+        margin .5s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .hvm-sched-panel.is-active {
+        opacity: 1;
+        max-height: 340px; /* >= height so the full card shows once open */
+        margin: 10px 0 18px;
+    }
+}
+
+@keyframes hvmSchedFade {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ==================== HIVEMIND WORLD GAMES MIXER (CTA) ====================
+   Figma node 1413:37705. Fonts from kit globals (Scandia=secondary, Helvetica=text);
+   accent #0200B0 + greys are Figma-exact. Fluid via clamp(). */
+.hvm-gm .hvm-gm-wrap {
+    display: block;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+.hvm-hotel-promo-text{
+    font-size: 9px;
+}
+.hvm-gm strong {
+    font-weight: 700;
+}
+
+/* left promo card */
+.hvm-gm-promo {
+    display: flex;
+    flex-direction: column;
+    background: var(--e-global-color-hmwhite, #fff);
+    border: 1px solid #ECECEC;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(8, 10, 20, .06);
+}
+
+.hvm-gm-promo-img {
+    position: relative;
+    aspect-ratio: 4 / 3.4;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hvm-gm-promo-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(8, 10, 20, .15), rgba(8, 10, 20, .45));
+}
+
+.hvm-gm-promo-ovl {
+    position: relative;
+    z-index: 1;
+    color: var(--e-global-color-hmwhite, #fff);
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 3.4vw, 40px);
+    line-height: 1.1;
+    text-align: center;
+    max-width: 60%;
+}
+
+.hvm-gm-promo-foot {
+    padding: clamp(18px, 1.6vw, 24px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hvm-gm-promo-title {
+    margin: 0 0 4px;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(18px, 1.5vw, 22px);
+    letter-spacing: .04em;
+    color: #0200B0;
+}
+
+.hvm-gm-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-size: 15px;
+    color: #4B5563;
+}
+
+.hvm-gm-ic {
+    display: inline-flex;
+    color: #6B7280;
+}
+
+/* right registration card */
+.hvm-gm-card {
+    background: #F6F4F1;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: clamp(18px, 1.9vw, 24px);
+    box-shadow: 0 10px 30px rgba(8, 10, 20, .05);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(16px, 1.7vw, 24px);
+}
+
+.hvm-gm-title {
+    margin: 0;
+    font-family: var(--e-global-typography-secondary-font-family), "Scandia", sans-serif;
+    font-weight: 700;
+    font-size: clamp(26px, 3vw, 38px);
+    line-height: 1.1;
+    color: var(--e-global-color-hmink, #080A12);
+}
+
+.hvm-gm-info {
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 2.4vw, 40px);
+    flex-wrap: wrap;
+}
+
+.hvm-gm-date, .hvm-gm-loc {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.hvm-gm-loc {
+    border-left: 1px solid #E5E7EB;
+    padding-left: clamp(20px, 2.4vw, 40px);
+}
+
+.hvm-gm-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 54px;
+    overflow: hidden;
+    height: 56px;
+    border-radius: 12px;
+    color: var(--e-global-color-hmwhite, #fff);
+    font-family: var(--e-global-typography-secondary-font-family), "Scandia", sans-serif;
+    line-height: 1;
+    border: 1px solid #E8E8E8;
+}
+
+
+.hvm-gm-badge b {
+    font-size: 11px;
+    letter-spacing: .5px;
+    opacity: .9;
+    margin-bottom: 3px;
+}
+
+.hvm-gm-badge i {
+    font-style: normal;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000;
+}
+
+.hvm-month {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 18px;
+    align-items: center;
+}
+
+.hvm-gm-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.hvm-gm-lines strong {
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-size: 15px;
+    color: var(--e-global-color-hmink, #080A12);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.hvm-gm-lines span {
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-size: 14px;
+    color: #6B7280;
+}
+
+.hvm-gm-locicon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 56px;
+    border-radius: 10px;
+    border: 1px solid #E5E7EB;
+    color: #6B7280;
+}
+.hvm-gm-locicon svg{
+    height:23px;
+    width: 23px;
+}
+
+.hvm-gm-ext {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.1em;
+    object-fit: contain;
+}
+
+/* registration inner box */
+.hvm-gm-reg {
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.hvm-gm-reg-head {
+    padding: 14px 20px;
+    border-bottom: 1px solid #E5E7EB;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--e-global-color-hmink, #080A12);
+}
+
+.hvm-gm-reg-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 20px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.hvm-gm-reg-ic {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #F1F1F4;
+    color: #4B5563;
+    flex: none;
+}
+
+.hvm-gm-reg-foot {
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.hvm-gm-welcome {
+    margin: 0;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-size: 15px;
+    color: #364153;
+}
+
+.hvm-gm-btn .elementor-button {
+    display: inline-flex;
+}
+
+/* Luma checkout modal — style the overlay/modal Luma's checkout-button.js injects.
+   Luma's own stylesheet doesn't reliably load here, leaving the modal unstyled
+   (position:static, no backdrop). These rules make it a proper centered popup. */
+.luma-checkout--overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(8, 10, 18, .6);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+}
+.luma-checkout--overlay.luma-show {
+    display: block;
+}
+/* Luma's CSS is absent, so its stray direct children (a huge unsized <svg>) would
+   knock the modal off-centre — neutralise them and centre the modal absolutely. */
+.luma-checkout--overlay > svg {
+    display: none;
+}
+.luma-checkout--modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 460px;
+    max-height: 90vh;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, .35);
+}
+.luma-checkout--modal iframe {
+    display: block;
+    width: 100% !important;
+    height: 78vh !important;
+    max-height: 760px;
+    border: 0;
+}
+.luma-checkout--close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .55);
+    color: #fff;
+    cursor: pointer;
+}
+.luma-checkout--close-btn svg { width: 18px; height: 18px; }
+.luma-checkout--by {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 16px;
+    padding: 8px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255, 255, 255, .85);
+}
+
+/* responsive: stack the two cards */
+@media (max-width: 900px) {
+    .hvm-gm .hvm-gm-wrap {
+        grid-template-columns: 1fr;
+        max-width: 560px;
+    }
+
+    .hvm-gm-info {
+        gap: 16px;
+    }
+
+    .hvm-gm-loc {
+        border-left: 0;
+        padding-left: 0;
+    }
+}
+
+/* ==================== THEME-OPTION LOGO GRID ====================
+   Centered flex-wrap: N-per-row via --hvm-cols/--hvm-gap (from the panel), but a
+   partial/last row (or a single logo) centers instead of leaving a big empty gap —
+   so it reads the same, clean, in the builder and on the frontend. */
+/* force the logo-grid widget to fill its container even when the container is a
+   flex parent that would otherwise shrink it to content (few logos) — this is what
+   made a 1-logo set collapse on the frontend while the editor showed it full-width. */
+.elementor-widget-hvm_logo_grid,
+.elementor-widget-hvm_logo_grid > .elementor-widget-container {
+    width: 100%;
+    align-self: stretch;
+}
+
+.hvm-lg {
+    --hvm-cols: 5;
+    --hvm-gap: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.hvm-lg-cell {
+    flex: 0 1 calc((100% - (var(--hvm-cols) - 1) * var(--hvm-gap)) / var(--hvm-cols));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+}
+
+.hvm-lg-cell img {
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+/* clickable logo — the link wraps the img without altering the layout */
+.hvm-lg-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    max-width: 100%;
+    transition: opacity .18s ease;
+}
+.hvm-lg-link:hover { opacity: .75; }
+
+/* strip mode (Show Divider): logos hug their content so the vertical dividers
+   read as a single-row sponsor bar; divider size/colour come from controls. */
+.hvm-lg--strip .hvm-lg-cell {
+    flex: 0 0 auto;
+}
+.hvm-lg-divider {
+    flex: 0 0 auto;
+    align-self: center;
+    width: 1px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.22);
+}
+
+/* venue */
+.hvm-venue-grid {
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.hvm-venue-loc {
+    font-weight: 700;
+    color: #080A12;
+    margin: 0 0 8px;
+}
+
+.hvm-venue-img {
+    min-height: 340px;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* hotels */
+/* Partner Hotels — Figma Frame 2147228347. Image flush-left (~50%), cream body,
+   1px border, radius 16, outlined promo pill, navy arrow button. Fonts from kit globals. */
+.hvm-hotel-grid {
+    display: grid;
+    grid-template-columns:repeat(var(--hvm-hotel-cols, 2), minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hvm-hotel-card {
+    display: grid;
+    /* minmax(0,1fr) both sides = true 50/50 so the image is always half the card
+       (plain 1fr lets the body's min-content shrink the image below half). */
+    grid-template-columns:minmax(0, 1fr) minmax(0, 1fr);
+    background: var(--e-global-color-hmcardbg, #F6F4F1);
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(8, 10, 20, .05);
+}
+
+.hvm-hotel-img {
+    background-size: cover;
+    background-position: center;
+    min-height: 100%;
+}
+
+.hvm-hotel-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: clamp(18px, 1.7vw, 24px);
+}
+
+.hvm-hotel-name {
+    margin: 0;
+    font-family: var(--e-global-typography-secondary-font-family), "Scandia", sans-serif;
+    font-weight: 700;
+    font-size: clamp(18px, 1.5vw, 22px);
+    line-height: 1.2;
+    color: var(--e-global-color-hmink, #080A12);
+}
+
+.hvm-stars {
+    color: #E8A23D;
+    letter-spacing: 3px;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.hvm-stars-off {
+    color: #D9DCE1;
+}
+
+.hvm-hotel-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hvm-hotel-meta {
+    margin: 0;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #4B5563;
+}
+
+.hvm-hotel-promo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap; /* label + pill stay on ONE line (matches Figma) */
+    margin-top: 2px;
+}
+
+.hvm-hotel-promo-label {
+    flex: none;
+    white-space: nowrap;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-size: 11.5px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: #6B7280;
+}
+
+.hvm-hotel-promo-code {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 0;
+    padding: 6px 14px;
+    border: 1px solid #0200B0;
+    border-radius: 999px;
+    color: #0200B0;
+    background: transparent;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: .04em;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background .18s ease, color .18s ease;
+}
+
+.hvm-hotel-promo-code:hover,
+.hvm-hotel-promo-code:focus-visible {
+    background: #0200B0;
+    color: #fff;
+    outline: none;
+}
+
+.hvm-hotel-promo-code svg {
+    width: 13px;
+    height: 13px;
+    flex: none;
+}
+
+/* "Copied" tooltip (shown briefly on copy; code text stays unchanged) */
+.hvm-hotel-promo-code::after {
+    content: "Copied";
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: var(--e-global-color-hmink, #080A12);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .16s ease, transform .16s ease;
+    z-index: 5;
+}
+
+.hvm-hotel-promo-code.is-copied::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.hvm-hotel-btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.hvm-hotel-btn .elementor-button {
+    display: inline-flex;
+}
+
+/* Partner Hotels responsive: column count comes from the widget control
+   (--hvm-hotel-cols); card stacks (image on top) on mobile. */
+@media (max-width: 1100px) {
+    .hvm-hotel-grid {
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hvm-hotel-card {
+        grid-template-columns: 1fr; /* image on top, details below */
+    }
+
+    .hvm-hotel-img {
+        min-height: 200px;
+        aspect-ratio: 16 / 10;
+    }
+}
+
+/* sponsors */
+.hvm-sponsor-tier {
+    margin-bottom: 44px;
+    text-align: center;
+}
+
+.hvm-sponsor-tier:last-child {
+    margin-bottom: 0;
+}
+
+.hvm-logo-grid {
+    display: grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap: 16px;
+}
+
+.hvm-logo-cell {
+    background: #fff;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    min-height: 104px;
+}
+
+.hvm-logo-cell img {
+    max-width: 100%;
+    max-height: 56px;
+    object-fit: contain;
+}
+
+/* logo-grid variants */
+.hvm-logo-grid-4 {
+    grid-template-columns:repeat(4, 1fr);
+}
+
+.hvm-logo-grid-6 {
+    grid-template-columns:repeat(6, 1fr);
+}
+
+.hvm-logo-grid-sm .hvm-logo-cell {
+    min-height: 76px;
+    padding: 16px;
+}
+
+/* testimonials (iframe) */
+.hvm-testimonials .hvm-testi-embed {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.hvm-testi-embed iframe {
+    width: 100%;
+    min-height: 620px;
+    border: 0;
+    display: block;
+}
+
+.hvm-testi-ph {
+    min-height: 320px;
+    background: #F6F4F1;
+    border: 1px dashed #cfd3dc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    color: #6b7280;
+}
+
+.hvm-testi-ph code {
+    background: #eceef3;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* gallery — image carousel (Figma carousel-Frame 2147228501).
+   per-view / gap / height / radius come from the panel; JS drives the track. */
+.hvm-gallery-carousel .hvm-gal {
+    --hvm-gal-per: 3;
+    --hvm-gal-gap: 24px;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hvm-gal-viewport {
+    overflow: hidden;
+}
+
+.hvm-gal-track {
+    display: flex;
+    gap: var(--hvm-gal-gap);
+    transition: transform .5s cubic-bezier(.4, 0, .2, 1);
+    will-change: transform;
+}
+
+.hvm-gal-slide {
+    flex: 0 0 calc((100% - (var(--hvm-gal-per) - 1) * var(--hvm-gal-gap)) / var(--hvm-gal-per));
+}
+
+.hvm-gal-img {
+    position: relative;
+    height: 340px;
+    border-radius: 16px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-color: #0B0D17;
+    display: flex;
+    align-items: flex-end;
+}
+
+
+
+.hvm-gal-cap {
+    position: relative;
+    z-index: 1;
+    padding: 18px 20px;
+    color: var(--e-global-color-hmwhite, #fff);
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+
+/* nav row: arrows + 03/07 progress */
+.hvm-gal-nav {
+    --hvm-gal-arrow: #010051;
+    --hvm-gal-active: #0200B0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: clamp(18px, 2vw, 28px);
+}
+
+/* scope-prefixed + appearance reset so the kit's global <button> navy fill
+   doesn't win (same guard the schedule tabs needed). */
+.hvm-gallery-carousel .hvm-gal-prev,
+.hvm-gallery-carousel .hvm-gal-next {
+    -webkit-appearance: none;
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--hvm-gal-arrow);
+    background: transparent;
+    border: 1px solid var(--hvm-gal-arrow);
+    box-shadow: none;
+    transition: background .18s ease, color .18s ease, opacity .18s ease;
+}
+
+.hvm-gallery-carousel .hvm-gal-prev svg,
+.hvm-gallery-carousel .hvm-gal-next svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* hover = active accent color (fill + ring) */
+.hvm-gallery-carousel .hvm-gal-prev:hover,
+.hvm-gallery-carousel .hvm-gal-next:hover {
+    background: var(--hvm-gal-active);
+    border-color: var(--hvm-gal-active);
+    color: #fff;
+}
+
+.hvm-gallery-carousel .hvm-gal-arrows-solid .hvm-gal-prev,
+.hvm-gallery-carousel .hvm-gal-arrows-solid .hvm-gal-next {
+    background: var(--hvm-gal-arrow);
+    color: #fff;
+}
+
+.hvm-gallery-carousel .hvm-gal-arrows-minimal .hvm-gal-prev:hover,
+.hvm-gallery-carousel .hvm-gal-arrows-minimal .hvm-gal-next:hover {
+    border-color: var(--hvm-gal-active);
+}
+
+.hvm-gallery-carousel .hvm-gal-arrows-minimal .hvm-gal-prev,
+.hvm-gallery-carousel .hvm-gal-arrows-minimal .hvm-gal-next {
+    border-color: transparent;
+}
+
+.hvm-gallery-carousel .hvm-gal-prev[disabled],
+.hvm-gallery-carousel .hvm-gal-next[disabled] {
+    opacity: .35;
+    cursor: default;
+}
+
+.hvm-gal-progress {
+    min-width: 58px;
+    text-align: center;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-size: 15px;
+    letter-spacing: .06em;
+    color: var(--e-global-color-hmink, #080A12);
+}
+
+.hvm-gal-progress b {
+    font-weight: 700;
+}
+
+.hvm-gal-progress i {
+    font-style: normal;
+    color: #6B7280;
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+    .hvm-stat-grid {
+        grid-template-columns:repeat(2, 1fr);
+        gap: 28px;
+    }
+
+    .hvm-logo-grid {
+        grid-template-columns:repeat(3, 1fr);
+    }
+
+    .hvm-gallery-grid {
+        grid-template-columns:repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .hvm-recap-grid, .hvm-venue-grid {
+        grid-template-columns:1fr;
+        gap: 28px;
+    }
+
+    /* hotels handled by the dedicated 1100/640 breakpoints above */
+    .hvm-logo-grid, .hvm-gallery-grid {
+        grid-template-columns:repeat(2, 1fr);
+    }
+
+    .hvm-hero {
+        min-height: 600px;
+    }
+
+    .hvm-venue-img {
+        min-height: 240px;
+    }
+
+    /* hero: buttons stack full-width; countdown stays one line (nowrap + clamp shrink) */
+    .hvm-hero-btns {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        max-width: 340px;
+        margin: 0 auto;
+    }
+
+    .hvm-hero-btns .hvm-btn {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.hvm-lg-cell {
+
+}
+
+/* ============================ TEAM ============================
+   Figma Frame 2147228290 cards. Fonts from kit globals (Helvetica=text,
+   Scandia=secondary); sizes fluid via clamp(). Layout 1 = grid (optional
+   mobile carousel); Layout 2 = the same cards under Marketing / World tabs. */
+.hvm-team { --hvm-team-cols: 3; --hvm-team-gap: 16px; }
+.hvm-team-carousel { max-width: 1200px; margin: 0 auto; }
+.hvm-team-track {
+    display: grid;
+    grid-template-columns: repeat(var(--hvm-team-cols, 3), 1fr);
+    gap: var(--hvm-team-gap, 16px);
+    align-items: stretch;
+}
+.hvm-team-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #C5CAD3;
+    border-radius: 16px;
+    overflow: hidden;
+}
+.hvm-team-photo {
+    height: 236px;
+    display: flex;
+    align-items: flex-start; /* anchor to the top so heads are never clipped */
+    justify-content: center;
+    overflow: hidden;
+    background: #fff;
+}
+.hvm-team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    align-self: flex-start; /* letterbox (Contain) sits at the top, not the bottom */
+}
+.hvm-team-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px;
+}
+.hvm-team-top { display: flex; flex-direction: column; gap: 16px; }
+.hvm-team-namerow { display: flex; gap: 12px; align-items: flex-start; }
+.hvm-team-id { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.hvm-team-name {
+    margin: 0;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(16px, 1.6vw, 18px);
+    line-height: 1.2;
+    color: #080A12;
+}
+.hvm-team-role {
+    margin: 0;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 400;
+    font-size: clamp(14px, 1.4vw, 16px);
+    line-height: 1.3;
+    color: #2B2F3A;
+}
+.hvm-team-li { flex: 0 0 auto; width: 24px; height: 24px; color: #000000; display: inline-flex; }
+.hvm-team-li svg { width: 24px; height: 24px; }
+.hvm-team-bio {
+    margin: 0;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 400;
+    font-size: clamp(13px, 1.2vw, 14px);
+    line-height: 1.5;
+    color: #2B2F3A;
+}
+/* Read-more button — native Elementor button markup (.btn .elementor-button),
+   so the look/hover come from the theme's global button. Wrapper just spans the
+   full card width. */
+.hvm-team-btn { width: 100%; margin-top: auto; }
+.light.btn.hvm-team-btn .elementor-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    background: transparent!important;
+}
+
+.hvm-team-btn .elementor-button svg { width: 18px; height: 18px; }
+
+/* tabs (Layout 2) — Figma Frame 2147226069: full-width baseline, two equal tabs
+   (circle logo mark + label); active = purple accent + 3px underline. */
+.hvm-team-tabs {
+    --hvm-team-tab-active: #5E17EB;
+    --hvm-team-tab-ic: #1800AD;
+    display: flex;
+    max-width: 1140px;
+    margin: 0 auto clamp(24px, 3vw, 40px);
+    border-bottom: 1px solid #2B2F3A;
+}
+/* scope-prefixed so the kit's global <button> styles don't win. */
+.hvm-team .hvm-team-tab {
+    -webkit-appearance: none;
+    appearance: none;
+    flex: 1 0 0;
+    min-width: 0;
+    border-radius: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 8px 24px;
+    background: transparent;
+    border: 0;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px; /* sit the 3px accent on the baseline */
+    cursor: pointer;
+    box-shadow: none;
+    color: #2B2F3A;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 400;
+    font-size: clamp(15px, 1.8vw, 20px);
+    line-height: 28px;
+    transition: color .18s ease, border-color .18s ease;
+}
+.hvm-team-tab-ic {
+    flex: 0 0 auto;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--hvm-team-tab-ic, #1800AD);
+    color: #fff;
+}
+.hvm-team-tab-ic svg { width: 33.6px; height: 33.6px; display: block; }
+.hvm-team-tab-label { white-space: nowrap; }
+.hvm-team .hvm-team-tab.is-active {
+    color: var(--hvm-team-tab-active, #5E17EB);
+    border-bottom-color: var(--hvm-team-tab-active, #5E17EB);
+}
+.hvm-team .hvm-team-tab.is-active .hvm-team-tab-ic {
+    background: var(--hvm-team-tab-active, #5E17EB);
+}
+
+@media (max-width: 560px) {
+    .hvm-team .hvm-team-tab {  gap: 8px; padding: 12px 4px 16px; }
+    .hvm-team-tab-ic { width: 24px; height: 24px; }
+    .hvm-team-tab-ic svg { width: 12px; height: 12px; }
+}
+.hvm-team-panel { display: none; }
+.hvm-team-panel.is-active { display: block; }
+
+/* carousel nav hidden unless the carousel is active on mobile */
+.hvm-team-nav { display: none; }
+
+@media (max-width: 767px) {
+    .hvm-team-carousel.is-carousel .hvm-team-viewport { overflow: hidden; }
+    .hvm-team-carousel.is-carousel .hvm-team-track {
+        display: flex;
+        grid-template-columns: none;
+        transition: transform .4s cubic-bezier(.4, 0, .2, 1);
+        will-change: transform;
+    }
+    .hvm-team-carousel.is-carousel .hvm-team-card {
+        flex: 0 0 calc((100% - (var(--hvm-team-per, 1) - 1) * var(--hvm-team-gap, 16px)) / var(--hvm-team-per, 1));
+    }
+    .hvm-team-carousel.is-carousel .hvm-team-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 20px;
+    }
+    .hvm-team-prev, .hvm-team-next {
+        --hvm-team-arrow: #010051;
+        -webkit-appearance: none;
+        appearance: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--hvm-team-arrow);
+        background: transparent;
+        color: var(--hvm-team-arrow);
+        cursor: pointer;
+        box-shadow: none;
+        transition: background .18s ease, color .18s ease;
+    }
+    .hvm-team-prev svg, .hvm-team-next svg { width: 20px; height: 20px; }
+    .hvm-team-prev:hover, .hvm-team-next:hover { background: var(--hvm-team-arrow); color: #fff; }
+    .hvm-team-prev[disabled], .hvm-team-next[disabled] { opacity: .35; cursor: default; }
+}
+
+/* Layout 4 — Carousel with bottom dot navigation (no arrows). Cards per view
+   follow the Columns control (--hvm-team-cols, responsive). */
+.hvm-team-slider .hvm-team-viewport { overflow: hidden; }
+.hvm-team-slider .hvm-team-track {
+    display: flex;
+    grid-template-columns: none;
+    transition: transform .45s cubic-bezier(.4, 0, .2, 1);
+    will-change: transform;
+}
+.hvm-team-slider .hvm-team-card {
+    flex: 0 0 calc((100% - (var(--hvm-team-cols, 3) - 1) * var(--hvm-team-gap, 16px)) / var(--hvm-team-cols, 3));
+}
+.hvm-team-dots {
+    --hvm-dot: #C5CAD3;
+    --hvm-dot-active: #010051;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+.hvm-team-dots button {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--hvm-dot, #C5CAD3);
+    cursor: pointer;
+    box-shadow: none;
+    transition: background .18s ease, width .18s ease, border-radius .18s ease;
+}
+.hvm-team-dots button.is-active {
+    background: var(--hvm-dot-active, #010051);
+    width: 24px;
+    border-radius: 6px;
+}
+
+/* ============================ MIXER DATE ============================
+   "● WEDNESDAY / 26 AUGUST 2026". Base styling (fonts from kit globals,
+   sizes fluid via clamp, colours matching the design); the widget's per-item
+   colour / typography / spacing controls override these. */
+.hvm-mdate {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(6px, 0.8vw, 12px);
+    align-items: flex-start;
+    text-transform: uppercase;
+}
+.hvm-mdate-line {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.hvm-mdate-line-day { gap: 12px; align-items: center; }
+.hvm-mdate-line-full { gap: clamp(8px, 1vw, 14px); align-items: baseline; }
+.hvm-mdate-dot {
+    --hvm-mdate-dot: #4FA8E0;
+    position: relative;
+    z-index: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--hvm-mdate-dot, #4FA8E0);
+    flex: 0 0 auto;
+    display: inline-block;
+}
+/* ripple: two staggered rings expanding out from behind the solid dot */
+.hvm-mdate-dot::before,
+.hvm-mdate-dot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: 50%;
+    background: var(--hvm-mdate-dot, #4FA8E0);
+    animation: hvm-mdate-ripple 1.8s cubic-bezier(0, 0, .2, 1) infinite;
+}
+.hvm-mdate-dot::after {
+    animation-delay: .9s;
+}
+@keyframes hvm-mdate-ripple {
+    0%   { transform: scale(1);   opacity: .55; }
+    100% { transform: scale(3.4); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .hvm-mdate-dot::before,
+    .hvm-mdate-dot::after { animation: none; display: none; }
+}
+.hvm-mdate-day {
+    font-family: var(--e-global-typography-primary-font-family), "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: clamp(14px, 1.6vw, 22px);
+    letter-spacing: 0.18em;
+    line-height: 1.1;
+    color: #4FA8E0;
+}
+.hvm-mdate-date,
+.hvm-mdate-month,
+.hvm-mdate-year {
+    font-family: var(--e-global-typography-primary-font-family), "Roboto", sans-serif;
+    font-weight: 800;
+    font-size: clamp(30px, 4.4vw, 56px);
+    letter-spacing: 0.01em;
+    line-height: 1.05;
+    color: #FFFFFF;
+}
+
+/* ============================ MIXER COUNTDOWN ============================
+   Standalone version of the hero countdown. Fonts from kit globals, sizes
+   fluid via clamp(); per-item colour/typography/spacing come from controls. */
+.hvm-mcd {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(10px, 1.4vw, 18px);
+}
+.hvm-mcd-eyebrow {
+    margin: 0;
+    font-family: var(--e-global-typography-primary-font-family), "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: clamp(16px, 1.6vw, 22px);
+    line-height: 1.2;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+.hvm-mcd-row {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    gap: clamp(6px, 1vw, 14px);
+}
+.hvm-mcd-unit {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 5px;
+    white-space: nowrap;
+}
+.hvm-mcd-num {
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(20px, 2.2vw, 32px);
+    line-height: 1;
+    color: #FFFFFF;
+}
+.hvm-mcd-lbl {
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(10px, .85vw, 12px);
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    color: #FFFFFF;
+}
+.hvm-mcd-sep {
+    opacity: .5;
+    font-size: clamp(16px, 1.4vw, 20px);
+    color: #FFFFFF;
+}
+
+/* Countdown Layout 2 — boxed cells (Figma 1413-42705): number stacked over label
+   inside a translucent dark rounded box; no "·" separator. Colours/typography
+   are still overridable per element via the widget's Style controls. */
+.hvm-mcd-layout2 .hvm-mcd-row {
+    align-items: stretch;
+    gap: clamp(8px, 1vw, 14px);
+}
+.hvm-mcd-layout2 .hvm-mcd-unit {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-width: clamp(72px, 8vw, 96px);
+    padding: clamp(10px, 1.2vw, 16px) clamp(12px, 1.4vw, 22px);
+    background: rgba(0, 0, 0, .37);
+    border-radius: 12px;
+}
+.hvm-mcd-layout2 .hvm-mcd-num {
+    font-size: clamp(28px, 3vw, 44px);
+}
+.hvm-mcd-layout2 .hvm-mcd-lbl {
+    font-size: clamp(12px, 1vw, 15px);
+    text-transform: capitalize;
+    letter-spacing: 0;
+    color: #CBD5E1;
+}
+.hvm-mcd-layout2 .hvm-mcd-sep {
+    display: none;
+}
+
+button.hvm-team-tab:hover{
+    border-bottom-color: var(--hvm-team-tab-active, #5E17EB);
+    color: var(--hvm-team-tab-active, #5E17EB);
+    background: transparent !important;
+}
+
+/* ==================== MEGA DROPDOWN (header "Resources") ====================
+   Figma Frame 2147228116. Applied to any Elementor/WP menu item whose submenu
+   contains items with a "Dropdown image" (class .hvm-mega on the parent <li>).
+   Look/positioning of the panel container stays Elementor's; we only restyle
+   the panel surface + the image-card rows. Layout stays block so Elementor's
+   own show/hide (display toggle) keeps working. */
+.hvm-mega > .sub-menu.elementor-nav-menu--dropdown,
+.hvm-mega > .sub-menu {
+    width: 336px !important;
+    max-width: calc(100vw - 32px);
+    padding: 16px !important;
+    background: #fff !important;
+    border: 0 !important;
+    border-radius: 12px !important;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25) !important;
+}
+/* mobile: full-width dropdown panel, no shadow */
+@media (max-width: 767px) {
+    .hvm-mega > .sub-menu.elementor-nav-menu--dropdown,
+    .hvm-mega > .sub-menu {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-shadow: none !important;
+    }
+}
+.hvm-mega > .sub-menu > li {
+    margin: 0 !important;
+    border: 0 !important;
+}
+.hvm-mega > .sub-menu > li + li {
+    margin-top: 4px !important;
+}
+.hvm-mega > .sub-menu .hvm-mega-head-li {
+    pointer-events: none;
+}
+.hvm-mega-head {
+    display: block;
+    padding: 0 8px 8px;
+    color: #525252;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+}
+/* the image-card row (replaces the plain sub-item anchor) */
+.hvm-mega > .sub-menu a.hvm-mega-item {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px !important;
+    border: 0 !important;
+    border-radius: 8px !important;
+    background: transparent !important;
+    text-decoration: none;
+    transition: background .16s ease;
+}
+.hvm-mega > .sub-menu a.hvm-mega-item:hover,
+.hvm-mega > .sub-menu a.hvm-mega-item:focus-visible {
+    background: #F6F4F1 !important;
+}
+.hvm-mega-ic {
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.hvm-mega-ic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.hvm-mega-txt {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.hvm-mega-title {
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.25;
+    color: #171717 !important;
+    text-wrap: auto;
+}
+.hvm-mega-sub {
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.25;
+    color: #404040 !important;
+}
+.hvm-mega-chev {
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    color: #171717;
+}
+
+/* ============ CONFERENCE TIMELINE (Figma Frame 2147228461) ============
+   Stacked banner cards: bg image + left-dark horizontal gradient, white text.
+   Colours/overlay overridable via the widget; fonts from kit globals. */
+.hvm-conf-timeline .hvm-ctl-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.hvm-ctl-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 200px;
+    padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 56px);
+    border-radius: 14px;
+    overflow: hidden;
+    background: #0B0D17 center center / cover no-repeat;
+}
+.hvm-ctl-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--hvm-ctl-ov, rgba(7, 7, 37, .9)) 33%, rgba(7, 7, 37, 0) 60%);
+    pointer-events: none;
+}
+.hvm-ctl-body {
+    position: relative;
+    z-index: 2;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #fff;
+}
+.hvm-ctl-title {
+    margin: 0;
+    font-family: var(--e-global-typography-secondary-font-family), "Scandia", sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 3.6vw, 46px);
+    line-height: 1.05;
+    color: #fff;
+}
+.hvm-ctl-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+}
+.hvm-ctl-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(13px, 1.2vw, 16px);
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    color: #fff;
+}
+.hvm-ctl-tag::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: currentColor;
+}
+.hvm-ctl-desc {
+    margin: 10px 0 0;
+    max-width: 560px;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 400;
+    font-size: clamp(15px, 1.4vw, 20px);
+    line-height: 1.3;
+    color: #fff;
+}
+/* mobile (Frame 2147228535): image reads top, text sits over a bottom-up dark fade */
+@media (max-width: 767px) {
+    .hvm-ctl-card {
+        align-items: flex-end;
+        min-height: 300px;
+    }
+    .hvm-ctl-card::before {
+        background: linear-gradient(180deg, rgba(7, 7, 37, .35) 0%, var(--hvm-ctl-ov, rgba(7, 7, 37, .92)) 72%);
+    }
+    .hvm-ctl-body {
+        max-width: 100%;
+    }
+}
+
+/* ============ SPEAKERS GRID (Figma "speakers grid" tile 1413-36114) ============ */
+.hvm-spk-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--hvm-spk-cols, 4), minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.hvm-spk-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 24px;
+    background: #F6F4F1;
+    border: 1px solid #CFCFCF;
+    border-radius: 16px;
+    text-decoration: none;
+}
+.hvm-spk-logo {
+    margin-top: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.hvm-spk-logo img {
+    height: 32px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    display: block;
+}
+.hvm-spk-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1.08;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #e9e7e3;
+    display: block;
+}
+.hvm-spk-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.hvm-spk-name {
+    margin-top: 10px;
+    font-family: var(--e-global-typography-secondary-font-family), "Scandia", sans-serif;
+    font-weight: 700;
+    font-size: clamp(16px, 1.4vw, 20px);
+    line-height: 1.2;
+    color: #080A12;
+    text-align: center;
+}
+.hvm-spk-role {
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-size: clamp(13px, 1.1vw, 15px);
+    line-height: 1.3;
+    color: #6B7280;
+    text-align: center;
+}
+.hvm-spk-badge {
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 20px;
+    border-radius: 999px;
+    background: #010051;
+    color: #fff;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(12px, 1vw, 14px);
+    line-height: 1;
+}
+
+/* Schedule "Next Day" button (Summit multi-day, Figma Frame 2147228464).
+   Uses our native .btn structure (render_button, dark variant); the wrapper just
+   spans the tab column full width. */
+.hvm-sched-nextday {
+    width: 100%;
+    margin-top: 16px;
+}
+.hvm-sched-nextday .elementor-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hvm-sched-nextday .elementor-button svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Team widget — Layout 3: speaker tiles (Figma 1413-35088). Cutout photo, name,
+   role, then the company logo (plain image — no bg / no radius). Whole card links
+   to the single speaker page when a link is present. */
+.hvm-team-card--l3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 0 0 clamp(20px, 2.4vw, 32px);
+    background: #F6F4F1;
+    border: 1px solid #CFCFCF;
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+}
+.hvm-team-card--l3.is-link {
+    transition: box-shadow .18s ease, transform .18s ease;
+}
+.hvm-team-card--l3.is-link:hover {
+    box-shadow: 0 16px 34px -18px rgba(8, 10, 20, .28);
+    transform: translateY(-3px);
+}
+.hvm-team-photo--l3 {
+    width: 100%;
+    padding: clamp(16px, 2vw, 24px) clamp(16px, 2vw, 24px) 0;
+}
+.hvm-team-photo--l3 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+.hvm-team-body--l3 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: clamp(10px, 1.4vw, 16px) clamp(16px, 2vw, 24px) 0;
+}
+.hvm-team-card--l3 .hvm-team-name {
+    font-family: var(--e-global-typography-secondary-font-family), "Scandia", sans-serif;
+    font-size: clamp(18px, 1.8vw, 22px);
+}
+.hvm-team-card--l3 .hvm-team-role {
+    color: #6B7280;
+}
+.hvm-team-logo {
+    margin-top: clamp(10px, 1.4vw, 16px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.hvm-team-logo img {
+    max-height: 40px;
+    width: auto;
+    max-width: 80%;
+    object-fit: contain;
+    display: block;
+}
+
+.hvm-joincta .hvm-joincta-btn { display: inline-block; }
+
+/* ============ MIXER STICKY PROBAR (Figma 1502-1314) ============ */
+.hvm-sticky {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(16px, 2vw, 32px);
+    max-width: 1224px;
+    margin: 0 auto;
+    padding: 20px clamp(16px, 2vw, 30px);
+    background: #010055;
+    border-radius: 64px;
+    color: #fff;
+    box-shadow: 0 14px 34px -10px rgba(1, 0, 55, .45);
+}
+.hvm-sticky-logo {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+}
+.hvm-sticky-logo img {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+.hvm-sticky-mid {
+    flex: 1 1 auto;
+    min-width: 0;
+    text-align: center;
+}
+.hvm-sticky-title {
+    font-family: var(--e-global-typography-secondary-font-family), "Scandia", sans-serif;
+    font-weight: 700;
+    font-size: clamp(18px, 1.6vw, 22px);
+    line-height: 1.2;
+    color: #fff;
+}
+.hvm-sticky-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 4px;
+    font-family: var(--e-global-typography-text-font-family), "Helvetica", Arial, sans-serif;
+    font-size: clamp(13px, 1.1vw, 15px);
+    color: #CFD3E6;
+}
+.hvm-sticky-dot {
+    flex: 0 0 auto;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #3BE2C1;
+    display: inline-block;
+}
+.hvm-sticky-sep { opacity: .6; }
+.hvm-sticky-cta { flex: 0 0 auto; }
+/* mobile: hide the middle — logo + button on one line */
+@media (max-width: 767px) {
+    .hvm-sticky-mid { display: none; }
+    .hvm-sticky { border-radius: 16px; padding: 12px 16px; }
+}
+
+/* Sticky Probar — scroll-triggered dock (frontend only; JS adds .is-fixed).
+   Inline/normal in the builder; on the live page it fixes to the bottom and
+   slides up past the threshold, slides away below it. */
+.hvm-sticky-dock.is-fixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: clamp(12px, 2vw, 24px);
+    z-index: 9990;
+    padding: 0 clamp(12px, 2vw, 24px);
+    transform: translateY(180%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .5s cubic-bezier(.22,.61,.36,1), opacity .4s ease;
+    will-change: transform;
+}
+.hvm-sticky-dock.is-fixed.is-docked {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+    .hvm-sticky-dock.is-fixed { transition: none; }
+}
+
+/* Games Mixer CTA — Card Featured Image: shown after the title only below 768px */
+.hvm-gm-featured { display: none; }
+.hvm-gm-featured img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    margin: 14px 0 4px;
+}
+@media (max-width: 767px) {
+    .hvm-gm-featured { display: block; }
+}
