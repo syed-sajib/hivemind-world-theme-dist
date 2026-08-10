@@ -1,4 +1,4 @@
-window.HVM_MIXER_JS = '1.3.0'; /* execution marker */
+window.HVM_MIXER_JS = '1.3.1'; /* execution marker */
 /* Hivemind Mixer — navbar anchor smooth-scroll.
  * Registered LATE (after Elementor's frontend inits) so it reliably wins;
  * scrollIntoView is scroll-container-agnostic and honors CSS scroll-margin-top. */
@@ -176,69 +176,84 @@ window.HVM_MIXER_JS = '1.3.0'; /* execution marker */
  * Elementor panel). Track translateX by page; progress shows "highest visible
  * slide / total" (e.g. 03/07 = up to slide 3 of 7 in view). Loop + autoplay opt. */
 ( function () {
+	/* Center slider: the active slide is centered in the viewport with its
+	   neighbours peeking on both sides. Loop clones the whole set on each side so
+	   it slides forever with no visible rewind (snap by one set-width across the
+	   seam, where the clone is identical to the real slide). */
 	function initGal( root ) {
 		var viewport = root.querySelector( '.hvm-gal-viewport' );
 		var track    = root.querySelector( '.hvm-gal-track' );
-		var slides   = [].slice.call( root.querySelectorAll( '.hvm-gal-slide' ) );
+		var reals    = [].slice.call( root.querySelectorAll( '.hvm-gal-slide' ) );
 		var prevBtn  = root.querySelector( '.hvm-gal-prev' );
 		var nextBtn  = root.querySelector( '.hvm-gal-next' );
 		var curEl    = root.querySelector( '.hvm-gal-cur' );
 		var totEl    = root.querySelector( '.hvm-gal-tot' );
-		if ( ! track || slides.length === 0 ) { return; }
+		if ( ! track || reals.length === 0 ) { return; }
 
-		var total   = slides.length;
+		var n       = reals.length;
 		var loop    = root.getAttribute( 'data-loop' ) === 'yes';
 		var autoAtt = root.getAttribute( 'data-autoplay' ) === 'yes';
 		var delay   = parseInt( root.getAttribute( 'data-delay' ), 10 ) || 4000;
-		var index   = 0; // index of the first (left-most) visible slide
-		var timer   = null;
+		var speed   = parseInt( root.getAttribute( 'data-speed' ), 10 ) || 500;
+		var TRANS   = 'transform ' + speed + 'ms cubic-bezier(.4,0,.2,1)';
+		var editor  = document.body.classList.contains( 'elementor-editor-active' );
 
-		function perView() {
-			var v = getComputedStyle( root ).getPropertyValue( '--hvm-gal-per' );
-			var n = parseInt( v, 10 );
-			if ( ! n || n < 1 ) { n = 1; }
-			return Math.min( n, total );
+		var infinite = loop && n > 1;
+		var offset   = 0;   // DOM index of the first real slide
+		var cur      = 0;   // DOM index of the centered slide
+		var timer    = null, animating = false;
+
+		// Clone the whole set on each side for a seamless loop.
+		[].slice.call( track.querySelectorAll( '.hvm-gal-slide.is-clone' ) ).forEach( function ( c ) { c.parentNode.removeChild( c ); } );
+		if ( infinite ) {
+			var head = document.createDocumentFragment(), tail = document.createDocumentFragment();
+			reals.forEach( function ( s ) { var c = s.cloneNode( true ); c.classList.add( 'is-clone' ); c.setAttribute( 'aria-hidden', 'true' ); tail.appendChild( c ); } );
+			reals.forEach( function ( s ) { var c = s.cloneNode( true ); c.classList.add( 'is-clone' ); c.setAttribute( 'aria-hidden', 'true' ); head.appendChild( c ); } );
+			track.insertBefore( head, track.firstChild );
+			track.appendChild( tail );
+			offset = n;
 		}
-		function maxIndex() { return Math.max( 0, total - perView() ); }
+		var all = [].slice.call( track.querySelectorAll( '.hvm-gal-slide' ) );
+		cur = offset; // first real slide centered
 
-		function render() {
-			var pv    = perView();
-			var maxI  = maxIndex();
-			if ( index > maxI ) { index = maxI; }
-			if ( index < 0 ) { index = 0; }
-			// each slide's flex-basis includes the shared gap; translate by whole slides
-			var slide = slides[0];
-			var sw    = slide ? slide.getBoundingClientRect().width : 0;
-			var gap   = parseFloat( getComputedStyle( track ).columnGap || getComputedStyle( track ).gap || 0 ) || 0;
-			var shift = index * ( sw + gap );
-			track.style.transform = 'translateX(' + ( -shift ) + 'px)';
-
-			if ( curEl ) {
-				var shown = Math.min( total, index + pv );
-				curEl.textContent = ( shown < 10 ? '0' : '' ) + shown;
-			}
-			if ( totEl ) { totEl.textContent = ( total < 10 ? '0' : '' ) + total; }
-
-			if ( ! loop ) {
-				if ( prevBtn ) { prevBtn.disabled = ( index <= 0 ); }
-				if ( nextBtn ) { nextBtn.disabled = ( index >= maxI ); }
+		function unit() {
+			var w   = reals[0] ? reals[0].getBoundingClientRect().width : 0;
+			var gap = parseFloat( getComputedStyle( track ).columnGap || getComputedStyle( track ).gap || 0 ) || 0;
+			return { w: w, gap: gap };
+		}
+		function place( animate ) {
+			var u  = unit();
+			var vw = viewport ? viewport.clientWidth : 0;
+			var x  = ( vw / 2 ) - ( u.w / 2 ) - cur * ( u.w + u.gap );
+			track.style.transition = animate ? TRANS : 'none';
+			track.style.transform  = 'translateX(' + x + 'px)';
+			if ( ! animate ) { void track.offsetWidth; track.style.transition = TRANS; }
+			all.forEach( function ( s, i ) { s.classList.toggle( 'is-center', i === cur ); } );
+			var real = ( ( cur - offset ) % n + n ) % n;
+			if ( curEl ) { curEl.textContent = ( real + 1 < 10 ? '0' : '' ) + ( real + 1 ); }
+			if ( totEl ) { totEl.textContent = ( n < 10 ? '0' : '' ) + n; }
+			if ( ! infinite ) {
+				if ( prevBtn ) { prevBtn.disabled = ( cur <= 0 ); }
+				if ( nextBtn ) { nextBtn.disabled = ( cur >= n - 1 ); }
 			}
 		}
-
+		track.addEventListener( 'transitionend', function ( e ) {
+			if ( e.propertyName !== 'transform' || ! infinite || ! animating ) { return; }
+			animating = false;
+			if ( cur >= offset + n ) { cur -= n; place( false ); }
+			else if ( cur < offset ) { cur += n; place( false ); }
+		} );
 		function go( dir ) {
-			var maxI = maxIndex();
-			index += dir;
-			if ( index > maxI ) { index = loop ? 0 : maxI; }
-			if ( index < 0 )    { index = loop ? maxI : 0; }
-			render();
+			if ( infinite ) {
+				if ( animating ) { return; }
+				animating = true; cur += dir; place( true );
+			} else {
+				cur = Math.max( 0, Math.min( n - 1, cur + dir ) );
+				place( true );
+			}
 		}
-
-		function stopAuto() { if ( timer ) { clearInterval( timer ); timer = null; } }
-		function startAuto() {
-			if ( ! autoAtt || total <= perView() ) { return; }
-			stopAuto();
-			timer = setInterval( function () { go( 1 ); }, delay );
-		}
+		function stopAuto()  { if ( timer ) { clearInterval( timer ); timer = null; } }
+		function startAuto() { if ( ! autoAtt || n <= 1 || editor ) { return; } stopAuto(); timer = setInterval( function () { go( 1 ); }, delay ); }
 
 		if ( prevBtn ) { prevBtn.addEventListener( 'click', function () { go( -1 ); startAuto(); } ); }
 		if ( nextBtn ) { nextBtn.addEventListener( 'click', function () { go( 1 );  startAuto(); } ); }
@@ -247,16 +262,21 @@ window.HVM_MIXER_JS = '1.3.0'; /* execution marker */
 			viewport.addEventListener( 'mouseleave', startAuto );
 		}
 
-		var rt;
-		window.addEventListener( 'resize', function () {
-			clearTimeout( rt );
-			rt = setTimeout( render, 150 );
-		} );
+		// Swipe.
+		var sx = 0, dx = 0, drag = false;
+		if ( viewport ) {
+			viewport.addEventListener( 'touchstart', function ( e ) { sx = e.touches[0].clientX; dx = 0; drag = true; stopAuto(); }, { passive: true } );
+			viewport.addEventListener( 'touchmove', function ( e ) { if ( drag ) { dx = e.touches[0].clientX - sx; } }, { passive: true } );
+			viewport.addEventListener( 'touchend', function () { if ( drag && Math.abs( dx ) > 40 ) { go( dx < 0 ? 1 : -1 ); } drag = false; startAuto(); } );
+		}
 
-		render();
+		var rt;
+		window.addEventListener( 'resize', function () { clearTimeout( rt ); rt = setTimeout( function () { place( false ); }, 150 ); } );
+
+		place( false );
 		startAuto();
-		// re-render once images/fonts settle (flex widths can shift)
-		window.addEventListener( 'load', render );
+		// re-center once images/fonts settle (flex widths can shift).
+		window.addEventListener( 'load', function () { place( false ); } );
 	}
 	function boot() {
 		[].slice.call( document.querySelectorAll( '[data-hvm-gal]' ) ).forEach( initGal );

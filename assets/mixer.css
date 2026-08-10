@@ -1498,6 +1498,17 @@ html {
     flex: 0 0 calc((100% - (var(--hvm-gal-per) - 1) * var(--hvm-gal-gap)) / var(--hvm-gal-per));
 }
 
+/* center slider: the active (centered) slide is emphasised, neighbours recede */
+.hvm-gal-slide .hvm-gal-img {
+    transition: transform .45s cubic-bezier(.4, 0, .2, 1), opacity .45s ease;
+    transform: scale(.88);
+    opacity: .5;
+}
+.hvm-gal-slide.is-center .hvm-gal-img {
+    transform: scale(1);
+    opacity: 1;
+}
+
 .hvm-gal-img {
     position: relative;
     height: 340px;
