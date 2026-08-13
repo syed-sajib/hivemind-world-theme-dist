@@ -5,7 +5,7 @@ Description: Child theme of Hello Elementor. Registers the Mixer (event) custom 
 Author: DevDoitDigital
 Author URI: https://wpcraftlab.com
 Template: hello-elementor
-Version: 1.3.12
+Version: 1.3.13
 Text Domain: hivemind-mixer
 Update URI: https://github.com/syed-sajib/hivemind-world-theme-dist
 */
@@ -105,6 +105,7 @@ p {
     border-radius: 10px !important;
     border: 1px solid #010051 !important;
     transform: translateY(0);
+    box-shadow: 0 3px 8px -4px rgba(1, 0, 81, 0.18);
     transition: transform .25s ease,
     box-shadow .3s ease,
     background .35s ease,
@@ -158,11 +159,12 @@ p {
     max-width: 0px !important;
 }
 
-/* hover: the button lifts up a few px with a small, soft shadow — no colour change. */
+/* hover: the button lifts up a few px, and the mild resting shadow grows a bit
+   deeper so it reads as "pushed up" — no colour change. */
 .btn:not(.disabled) .elementor-button:hover,
 .btn:not(.disabled) .elementor-button:focus-visible {
     transform: translateY(-3px);
-    box-shadow: 0 10px 22px -6px rgba(1, 0, 81, 0.38);
+    box-shadow: 0 9px 20px -6px rgba(1, 0, 81, 0.32);
 }
 
 .btn.disabled *{
