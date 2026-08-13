@@ -5,7 +5,7 @@ Description: Child theme of Hello Elementor. Registers the Mixer (event) custom 
 Author: DevDoitDigital
 Author URI: https://wpcraftlab.com
 Template: hello-elementor
-Version: 1.3.10
+Version: 1.3.11
 Text Domain: hivemind-mixer
 Update URI: https://github.com/syed-sajib/hivemind-world-theme-dist
 */
@@ -104,7 +104,9 @@ p {
     font-size: clamp(14px, calc(0.875rem + ((1vw - 3.75px) * 0.1878)), 14px) !important;
     border-radius: 10px !important;
     border: 1px solid #010051 !important;
-    transition: box-shadow .35s ease,
+    transform: translateY(0);
+    transition: transform .25s ease,
+    box-shadow .3s ease,
     background .35s ease,
     color .35s ease,
     border-color .35s ease;
@@ -156,11 +158,11 @@ p {
     max-width: 0px !important;
 }
 
-/* hover: simple solid colour change + a very small, smooth shadow (no gradient).
-   Per-variant background/colour live in the DARK / LIGHT blocks below. */
+/* hover: the button lifts up a few px with a small, soft shadow — no colour change. */
 .btn:not(.disabled) .elementor-button:hover,
 .btn:not(.disabled) .elementor-button:focus-visible {
-    box-shadow: 0 4px 10px -4px rgba(1, 0, 81, 0.28);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px -6px rgba(1, 0, 81, 0.22);
 }
 
 .btn.disabled *{
@@ -178,38 +180,13 @@ p {
     outline-offset: 3px;
 }
 
-/* ========== DARK ========== */
-.dark.btn .elementor-button {
-    background: linear-gradient(180deg, #010053 0%, #01018D 100%) !important;
-    color: #F9FAFF !important;
-    padding: 16px 24px;
-}
-
-/* hover: one level lighter than the base navy gradient, font stays light */
-.dark.btn .elementor-button:hover {
-    background: linear-gradient(180deg, #0A0A7A 0%, #2A2AB5 100%) !important;
-    border-color: #2A2AB5 !important;
-}
-.dark.btn .elementor-button:hover, .dark.btn .elementor-button:hover * {
-    color: #F9FAFF !important;
-    fill: #F9FAFF !important;
-}
-
-/* ========== LIGHT ========== */
+/* Both variants now use the LIGHT palette: cream background, navy text + border.
+   The only hover feedback is the shared lift + soft shadow above (no colour change). */
+.dark.btn .elementor-button,
 .light.btn .elementor-button {
     background: #F6F4F1 !important;
     color: #010051 !important;
-    padding: 16px 24px;
-}
-
-/* hover: the dark navy gradient (from the dark button) with light font */
-.light.btn:not(.disabled) .elementor-button:hover {
-    background: linear-gradient(180deg, #010053 0%, #01018D 100%) !important;
-    border-color: #010051 !important;
-}
-.light.btn:not(.disabled) .elementor-button:hover, .light.btn:not(.disabled) .elementor-button:hover * {
-    color: #F9FAFF !important;
-    fill: #F9FAFF !important;
+    padding: 12px 24px;
 }
 
 /* icon inherits text color in both states */
@@ -239,7 +216,7 @@ p {
 
     .btn .elementor-button:hover::before {
         animation: none;
-        opacity: 1;
+        opacity: 0;
     }
 }
 
