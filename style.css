@@ -5,7 +5,7 @@ Description: Child theme of Hello Elementor. Registers the Mixer (event) custom 
 Author: DevDoitDigital
 Author URI: https://wpcraftlab.com
 Template: hello-elementor
-Version: 1.3.13
+Version: 1.4.0
 Text Domain: hivemind-mixer
 Update URI: https://github.com/syed-sajib/hivemind-world-theme-dist
 */
@@ -101,7 +101,7 @@ p {
     z-index: 1;
     font-family: var(--e-global-typography-accent-font-family), Sans-serif;
     text-transform: uppercase;
-    font-size: clamp(14px, calc(0.875rem + ((1vw - 3.75px) * 0.1878)), 14px) !important;
+    font-size: clamp(14px, calc(0.875rem + ((1vw - 3.75px) * 0.1878)), 15px) !important;
     border-radius: 10px !important;
     border: 1px solid #010051 !important;
     transform: translateY(0);
@@ -111,7 +111,8 @@ p {
     background .35s ease,
     color .35s ease,
     border-color .35s ease;
-    padding: 12px 24px !important;
+    padding: 15px 16px !important;
+    letter-spacing: 0.5px !important;
 }
 /*.elementor-button-icon .e-font-icon-svg {*/
 /*    height: clamp(14px, calc(0.875rem + ((1vw - 3.75px) * 0.1878)), 17px) !important;*/
@@ -124,7 +125,7 @@ p {
     }
 }
 .btn .elementor-button .elementor-button-content-wrapper {
-    gap: 12px;
+    gap: 8px;
 }
 
 .btn .elementor-button::before {
